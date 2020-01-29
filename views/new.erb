@@ -1,0 +1,24 @@
+
+<!-- action will be post method: route = post "pizza-orders" -->
+<form method="post" action="/pizza-orders">
+  <label for="first-name">First Name:</label>
+  <input id="first-name" type="text" name="first_name"  />
+  <label for="last-name">Last Name:</label>
+  <input id="last-name" type="text" name="last_name" />
+  <label for="pizza-select">Select A Pizza:</label>
+  <select id="pizza-select" name="topping">
+    <option value="margherita">Margherita</option>
+    <option value="calzone">Calzone</option>
+  </select>
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity" />
+  <input type="submit"  value="Order Pizza">
+</form>
+
+
+<!-- The name properties on the <input>s and the <select> should match the keys that we look for on our options hash in the PizzaOrder model’s initialize method.
+
+The for properties on the <label>s should match the id property on the relevant <input> or <select>. This is important for accessibility to allow screen readers to read our website correctly. -->
+
+<!-- An HTML form can send any HTTP request type we want, but the address bar of a browser can only send GET requests.
+This is a security feature. It means that users can’t just POST any stuff they want to our server. We get to control the data they POST with our form inputs. -->

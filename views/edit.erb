@@ -1,0 +1,30 @@
+<h1>Edit Order</h1>
+
+<h1>Edit Pizza Order</h1>
+
+<form action="/pizza-orders/<%= @order_obj.id %>" method="post">
+
+  <label>
+  First Name:
+    <input type="text" name="first_name" value="<%= @order_obj.first_name() %>" >
+  </label>
+
+  <label>
+  Last Name:
+    <input type="text" name="last_name" value="<%= @order_obj.last_name() %>">
+  </label>
+
+  <label>Select a pizza:
+    <select name="topping">
+      <option value="Margherita" <%= "selected" if @order_obj.topping == "Margherita" %>>Margherita</option>
+      <option value="Calzone" <%= "selected" if @order_obj.topping == "Calzone" %>>Calzone</option>
+    </select>
+  </label>
+
+  <label>Quantity:
+    <input type="number" name="quantity" value="<%= @order_obj.quantity() %>">
+  </label>
+
+
+  <input type='submit' value="Update">
+</form>
