@@ -57,17 +57,14 @@ post '/pizza-orders/:id' do
 end
 
 
-# #edit pizza form
-# get '/pizzas/:id/edit' do
-#   @pizza = Pizza.find( params[:id] ) #new
-#   erb( :edit ) #new
-# end
-#
-# #actually update a pizza by id
-# post '/pizzas/:id' do
-#   @pizza = Pizza.update( params )
-#   redirect to( "/pizzas/#{params[:id]}" )
-# end
+#delete a pizza by id
+post '/pizza-orders/:id/delete' do
+  id = params[:id]
+  @order_obj = PizzaOrder.find(id)
+  @order_obj.delete
+
+  redirect to('/pizza-orders')
+end
 
 
 

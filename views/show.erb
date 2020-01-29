@@ -8,10 +8,11 @@
 as we cannot make a hyperlink to post request, we need to use a button
 inside a form with method - post and action pointing to  -->
 
-<form method="post" action="/pizza-orders/id/delete">
+<form method="post" action="/pizza-orders/<%=@order.id%>/delete">
   <input type="submit"  value="Delete This Order">
 </form>
 
-<form method="post" action="/pizza_orders/:id/edit">
+
+<form method="get" action="/pizza-orders/<%=@order.id%>/edit">
   <input type="submit"  value="Edit This Order">
 </form>
